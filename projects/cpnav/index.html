@@ -1,0 +1,220 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> CPNAV | Qizhao Chen </title> <meta name="author" content="Qizhao Chen"> <meta name="description" content="Calibrated vision-language navigation for finding objects in places a robot has never seen"> <meta name="keywords" content="Qizhao Chen, robotics, conformal prediction, vision-language models, robot navigation, UCLA, mechanical engineering"> <meta property="og:site_name" content="Qizhao Chen"> <meta property="og:type" content="website"> <meta property="og:title" content="Qizhao Chen | CPNAV"> <meta property="og:url" content="https://thecqzz.github.io/projects/cpnav/"> <meta property="og:description" content="Calibrated vision-language navigation for finding objects in places a robot has never seen"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="CPNAV"> <meta name="twitter:description" content="Calibrated vision-language navigation for finding objects in places a robot has never seen"> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Qizhao Chen"
+        },
+        "url": "https://thecqzz.github.io/projects/cpnav/",
+        "@type": "WebSite",
+        "description": "Calibrated vision-language navigation for finding objects in places a robot has never seen",
+        "headline": "CPNAV",
+        
+        "sameAs": ["https://scholar.google.com/citations?user=lIrvSaUAAAAJ","https://github.com/thecqzz","https://www.linkedin.com/in/qizhao-chen-8647b624b",null],
+        
+        "name": "Qizhao Chen",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://thecqzz.github.io/projects/cpnav/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Qizhao</span> Chen </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">robotics research </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">other projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">CPNAV</h1> <p class="post-description">Calibrated vision-language navigation for finding objects in places a robot has never seen</p> </header> <article> <p><strong>Qizhao Chen</strong>, <a href="https://practice-lab-ucla.github.io/people/yuanhong_zeng/" rel="external nofollow noopener" target="_blank">Yuanhong Zeng</a>, <a href="https://practice-lab-ucla.github.io/people/Shoh_Nishino/" rel="external nofollow noopener" target="_blank">Shoh Nishino</a>, and <a href="https://practice-lab-ucla.github.io/people/anushri_dixit/" rel="external nofollow noopener" target="_blank">Anushri Dixit</a> · UCLA PRACTICE Lab · 2026</p> <p><a href="/assets/pdf/chen2026cpnav.pdf">Paper (PDF)</a></p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/projects/cpnav/cpnav-480.webp 480w,/assets/img/projects/cpnav/cpnav-800.webp 800w,/assets/img/projects/cpnav/cpnav-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/projects/cpnav/cpnav.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="CPNAV overview" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> <div class="caption"> CPNAV in one picture. (a) A VLM scores collision-free actions. (b) Conformal prediction keeps only the actions the robot can trust. (c) A search tree with backtracking explores them. (d) The robot we used. </div> <h2 id="the-problem">The problem</h2> <p>Asking a robot to find an object, say a plant, in a home it has never seen is a core challenge in embodied AI. Vision-language models (VLMs) understand scenes well, but their action choices are often overconfident and not calibrated. A robot that trusts every VLM answer will sometimes walk confidently in the wrong direction. This page summarizes our paper <a class="citation" href="#chen2026cpnav">(Chen et al., 2026)</a>.</p> <h2 id="how-cpnav-works">How CPNAV works</h2> <p>CPNAV keeps the reasoning power of VLMs and adds a statistical layer that tells the robot which actions it can trust. It has three parts.</p> <h3 id="1-propose-safe-actions-and-score-them-with-vlms">1. Propose safe actions and score them with VLMs</h3> <div class="row justify-content-sm-center"> <div class="col-sm-10 mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/projects/cpnav/action_proposal-480.webp 480w,/assets/img/projects/cpnav/action_proposal-800.webp 800w,/assets/img/projects/cpnav/action_proposal-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/projects/cpnav/action_proposal.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="Action proposal" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> </div> <div class="caption"> From one RGB-D image, CPNAV builds a navigability map, proposes collision-free motion primitives, and draws them on the camera image. Green is newly discovered space and blue is space the robot already explored. </div> <p>Two VLMs look at the image. A stopping VLM decides whether the goal object is in view and rates how promising the scene is. An action VLM gives each drawn action a score. The robot also keeps a voxel map of explored space so it prefers new areas.</p> <div class="row justify-content-sm-center"> <div class="col-sm-7 mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/projects/cpnav/vlm_prompts-480.webp 480w,/assets/img/projects/cpnav/vlm_prompts-800.webp 800w,/assets/img/projects/cpnav/vlm_prompts-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/projects/cpnav/vlm_prompts.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="VLM prompts" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> </div> <div class="caption"> The prompts for the stopping VLM and the action VLM, and an example answer. </div> <h3 id="2-calibrate-the-scores-with-conformal-prediction">2. Calibrate the scores with conformal prediction</h3> <p>Raw VLM scores are not reliable probabilities. Offline, we run a tree-structured exploration with backtracking on calibration episodes to find the oracle action at each step, and we record the score the VLM gave it. Conformal prediction turns these scores into a threshold with a finite-sample guarantee: at a risk level the user picks, the correct action is kept with at least that probability. Online, actions below the threshold are dropped. The layer is model-agnostic, so it can wrap any VLM policy.</p> <h3 id="3-explore-with-a-search-tree-and-backtrack">3. Explore with a search tree and backtrack</h3> <p>The remaining actions are explored in a search tree. Each node is a place the robot visited and each edge is an action. If a branch does not lead to the goal, the robot goes back to the parent node and tries the next trusted action instead of wandering.</p> <h2 id="results">Results</h2> <h3 id="simulation">Simulation</h3> <p>We test on two benchmarks in AI Habitat, HM3D v0.2 and MP3D, with 200 episodes each and a 200-step budget. We compare against the same pipeline without calibration, three heuristic ways of building the action set, and two recent VLM navigation methods.</p> <table> <thead> <tr> <th>Policy</th> <th style="text-align: right">HM3D SR (%)</th> <th style="text-align: right">HM3D SPL (%)</th> <th style="text-align: right">HM3D distance (m)</th> <th style="text-align: right">MP3D SR (%)</th> <th style="text-align: right">MP3D SPL (%)</th> <th style="text-align: right">MP3D distance (m)</th> </tr> </thead> <tbody> <tr> <td>No Calibration</td> <td style="text-align: right">81.0</td> <td style="text-align: right">40.3</td> <td style="text-align: right">35.4</td> <td style="text-align: right">68.5</td> <td style="text-align: right">43.0</td> <td style="text-align: right">36.4</td> </tr> <tr> <td>Simple Set</td> <td style="text-align: right">76.7</td> <td style="text-align: right">39.5</td> <td style="text-align: right">32.8</td> <td style="text-align: right">71.0</td> <td style="text-align: right">44.3</td> <td style="text-align: right">33.4</td> </tr> <tr> <td>Prompt Set</td> <td style="text-align: right">79.7</td> <td style="text-align: right">38.7</td> <td style="text-align: right">37.4</td> <td style="text-align: right">71.5</td> <td style="text-align: right">45.3</td> <td style="text-align: right">31.6</td> </tr> <tr> <td>Ensemble Set</td> <td style="text-align: right">74.0</td> <td style="text-align: right">39.1</td> <td style="text-align: right">28.0</td> <td style="text-align: right">66.5</td> <td style="text-align: right">41.8</td> <td style="text-align: right">28.2</td> </tr> <tr> <td>STRIVE</td> <td style="text-align: right">82.5</td> <td style="text-align: right">41.5</td> <td style="text-align: right">17.6</td> <td style="text-align: right">71.5</td> <td style="text-align: right">42.3</td> <td style="text-align: right">21.0</td> </tr> <tr> <td>WMNav</td> <td style="text-align: right">80.0</td> <td style="text-align: right">39.9</td> <td style="text-align: right">18.2</td> <td style="text-align: right">75.0</td> <td style="text-align: right">45.2</td> <td style="text-align: right">18.5</td> </tr> <tr> <td><strong>CPNAV</strong></td> <td style="text-align: right"><strong>86.0</strong></td> <td style="text-align: right"><strong>44.9</strong></td> <td style="text-align: right">29.2</td> <td style="text-align: right"><strong>77.0</strong></td> <td style="text-align: right"><strong>46.8</strong></td> <td style="text-align: right">32.1</td> </tr> </tbody> </table> <p>Compared with no calibration, CPNAV raises success rate by 6.2% and SPL by 11.4% on HM3D, and by 12.4% and 8.8% on MP3D, while cutting travel distance on HM3D by 17.5%. It also beats the best heuristic threshold. CPNAV has slightly higher success and SPL than STRIVE and WMNav but travels farther, because full backtracking makes sure every trusted branch is eventually explored.</p> <p>The advantage grows when the robot has fewer steps:</p> <table> <thead> <tr> <th>Step budget</th> <th style="text-align: right">No Calibration SR / SPL (%)</th> <th style="text-align: right">CPNAV SR / SPL (%)</th> </tr> </thead> <tbody> <tr> <td>50 steps (25%)</td> <td style="text-align: right">60.3 / 37.7</td> <td style="text-align: right"><strong>73.0 / 43.2</strong></td> </tr> <tr> <td>100 steps (50%)</td> <td style="text-align: right">75.7 / 39.8</td> <td style="text-align: right"><strong>80.0 / 44.4</strong></td> </tr> <tr> <td>200 steps (100%)</td> <td style="text-align: right">81.0 / 40.3</td> <td style="text-align: right"><strong>86.0 / 44.9</strong></td> </tr> </tbody> </table> <h3 id="real-robot">Real robot</h3> <p>We deployed CPNAV on a modified Hiwonder MentorPi M1 robot with a ZED 2i stereo camera, a Mecanum drivetrain, and SLAM Toolbox for state estimation. We ran 24 randomized object-goal episodes in two apartments.</p> <table> <thead> <tr> <th>Policy</th> <th style="text-align: right">SR (%)</th> <th style="text-align: right">SPL (%)</th> <th style="text-align: right">Mean distance (m)</th> </tr> </thead> <tbody> <tr> <td>No Calibration</td> <td style="text-align: right">66.7</td> <td style="text-align: right">42.0</td> <td style="text-align: right">9.0</td> </tr> <tr> <td><strong>CPNAV</strong></td> <td style="text-align: right"><strong>83.3</strong></td> <td style="text-align: right"><strong>48.4</strong></td> <td style="text-align: right"><strong>6.3</strong></td> </tr> </tbody> </table> <p>Success rate went up by 24.9% and SPL by 15.2%, and the robot traveled 30.0% less distance.</p> <figure> <video src="/assets/video/cpnav_hardware_demo.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" controls=""></video> </figure> <div class="caption"> Hardware demo comparing the uncalibrated baseline and CPNAV. </div> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <img src="/assets/img/projects/cpnav/baseline_hardware.gif" class="img-fluid rounded z-depth-1" alt="Baseline hardware rollout"> </div> <div class="col-sm mt-3 mt-md-0"> <img src="/assets/img/projects/cpnav/cpnav_hardware.gif" class="img-fluid rounded z-depth-1" alt="CPNAV hardware rollout"> </div> </div> <div class="caption"> Left: the baseline commits to unreliable branches and runs out of steps. Right: CPNAV filters low-confidence actions and reaches the goal in 14 steps. </div> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/projects/cpnav/baseline_search_tree-480.webp 480w,/assets/img/projects/cpnav/baseline_search_tree-800.webp 800w,/assets/img/projects/cpnav/baseline_search_tree-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/projects/cpnav/baseline_search_tree.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="Baseline search tree" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/projects/cpnav/cpnav_search_tree-480.webp 480w,/assets/img/projects/cpnav/cpnav_search_tree-800.webp 800w,/assets/img/projects/cpnav/cpnav_search_tree-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/projects/cpnav/cpnav_search_tree.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="CPNAV search tree" loading="lazy" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> </div> <div class="caption"> The same two runs as search trees. The baseline explores a wide, diffuse tree. CPNAV explores fewer branches and moves more directly toward the goal. </div> <h3 id="what-matters-most">What matters most</h3> <p>We changed one setting at a time from the default CPNAV setup (GPT-5o-nano, camera height 0.9 m, 131° horizontal field of view, voxel map on) and measured the effect on HM3D.</p> <table> <thead> <tr> <th>Variant</th> <th style="text-align: right">SR (%)</th> <th style="text-align: right">SPL (%)</th> <th style="text-align: right">Mean distance (m)</th> </tr> </thead> <tbody> <tr> <td><strong>CPNAV (default)</strong></td> <td style="text-align: right"><strong>86.0</strong></td> <td style="text-align: right"><strong>44.9</strong></td> <td style="text-align: right"><strong>29.2</strong></td> </tr> <tr> <td>No Calibration</td> <td style="text-align: right">81.0</td> <td style="text-align: right">40.3</td> <td style="text-align: right">35.4</td> </tr> <tr> <td>Camera height 0.45 m</td> <td style="text-align: right">67.0</td> <td style="text-align: right">31.4</td> <td style="text-align: right">44.6</td> </tr> <tr> <td>Camera height 1.70 m</td> <td style="text-align: right">79.3</td> <td style="text-align: right">40.5</td> <td style="text-align: right">30.4</td> </tr> <tr> <td>Field of view 69°</td> <td style="text-align: right">40.0</td> <td style="text-align: right">18.7</td> <td style="text-align: right">44.8</td> </tr> <tr> <td>Field of view 101°</td> <td style="text-align: right">72.7</td> <td style="text-align: right">30.5</td> <td style="text-align: right">40.9</td> </tr> <tr> <td>Model GPT-4o-mini</td> <td style="text-align: right">71.3</td> <td style="text-align: right">33.7</td> <td style="text-align: right">34.4</td> </tr> <tr> <td>No voxel map</td> <td style="text-align: right">66.0</td> <td style="text-align: right">36.4</td> <td style="text-align: right">36.5</td> </tr> </tbody> </table> <p>A low camera or a narrow field of view hurts the most, because the robot sees less of the room. A smaller VLM also hurts, so calibration works best with a strong model. The voxel map helps by preventing repeated visits.</p> <h3 id="cost">Cost</h3> <p>Calibration does not add cost. On MP3D, CPNAV uses 12.9% fewer VLM tokens per episode than the uncalibrated baseline (201.6K versus 231.4K), and about 40 simulation episodes can run at once on a single GPU. On the robot, everything runs onboard without a separate compute server.</p> </article> <h2>References</h2> <div class="publications"> <h2 class="bibliography">2026</h2> <ol class="bibliography"><li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100" style="background-color:#6c757d"> <div>Preprint</div> </abbr> <figure> <picture> <img src="/assets/img/publication_preview/cpnav.png" class="preview z-depth-1 rounded" width="100%" height="auto" alt="cpnav.png" data-zoomable loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div id="chen2026cpnav" class="col-sm-8"> <div class="title">CPNAV: Calibrated Vision-Language Navigation for Object-Goal Search in Unseen Environments</div> <div class="author"> <em>Qizhao Chen</em>, <a href="https://practice-lab-ucla.github.io/people/yuanhong_zeng/" rel="external nofollow noopener" target="_blank">Yuanhong Zeng</a>, <a href="https://practice-lab-ucla.github.io/people/Shoh_Nishino/" rel="external nofollow noopener" target="_blank">Shoh Nishino</a>, and <a href="https://practice-lab-ucla.github.io/people/anushri_dixit/" rel="external nofollow noopener" target="_blank">Anushri Dixit</a> </div> <div class="periodical"> <em>In Preprint</em>, 2026 </div> <div class="periodical"> </div> <div class="links"> <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> <a href="/assets/pdf/chen2026cpnav.pdf" class="btn btn-sm z-depth-0" role="button">PDF</a> <a href="/projects/cpnav/" class="btn btn-sm z-depth-0" role="button">Website</a> </div> <div class="abstract hidden"> <p>Directing a robot to locate a target object in unseen environments remains a central challenge in embodied AI. Vision-Language Model (VLM)-based methods provide rich semantic reasoning but often produce uncalibrated and overconfident action decisions. We introduce CPNAV, a navigation framework that combines collision-aware planning with statistically calibrated VLM action scoring for map-free object-goal navigation. From RGB-D input, CPNAV constructs a navigability map, generates collision-free motion primitives, and queries two VLMs for goal detection and action scoring. The resulting scores are calibrated offline via conformal prediction (CP) using oracle actions obtained through a tree-structured exploration procedure with backtracking, providing finite-sample guarantees at a user-specified risk level. The CP layer is model-agnostic and can wrap any VLM policy. Online, calibrated VLM scores guide action selection, while a tree-structured exploration history records alternative actions and allows backtracking. We evaluate CPNAV in both simulation and real-world hardware settings. In AI Habitat simulation, compared with the uncalibrated baseline method, CPNAV achieves relative SR and SPL improvements of 6.2% and 11.4% on HM3D v0.2, and 12.4% and 8.8% on MP3D, respectively. In real-world deployment on a modified Hiwonder MentorPi robot, the corresponding improvements in SR and SPL are 24.9% and 15.2%, respectively.</p> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">chen2026cpnav</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{CPNAV: Calibrated Vision-Language Navigation for Object-Goal Search in Unseen Environments}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Chen, Qizhao and Zeng, Yuanhong and Nishino, Shoh and Dixit, Anushri}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Preprint}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2026}</span><span class="p">,</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li></ol> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Qizhao Chen. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 18, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "publications",
+          description: "Papers I have written or contributed to, newest first.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-robotics-research",
+          title: "robotics research",
+          description: "Research projects in safe robot navigation and control.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/research/";
+          },
+        },{id: "nav-other-projects",
+          title: "other projects",
+          description: "Course, competition, internship, and side projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Opens the CV PDF.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "news-our-paper-on-a-unified-mpc-strategy-for-a-tilt-rotor-vtol-aircraft-was-published-at-the-aiaa-scitech-2024-forum",
+          title: 'Our paper on a unified MPC strategy for a tilt-rotor VTOL aircraft was...',
+          description: "",
+          section: "News",},{id: "news-graduated-from-carnegie-mellon-university-with-an-m-s-in-mechanical-engineering",
+          title: 'Graduated from Carnegie Mellon University with an M.S. in Mechanical Engineering.',
+          description: "",
+          section: "News",},{id: "news-started-my-ph-d-in-mechanical-engineering-at-ucla-and-joined-the-practice-lab-led-by-prof-anushri-dixit",
+          title: 'Started my Ph.D. in Mechanical Engineering at UCLA and joined the PRACTICE Lab...',
+          description: "",
+          section: "News",},{id: "news-passed-the-ph-d-preliminary-exam",
+          title: 'Passed the Ph.D. preliminary exam.',
+          description: "",
+          section: "News",},{id: "news-started-as-a-teaching-assistant-for-mae-171a-introduction-to-feedback-and-control-systems-at-ucla",
+          title: 'Started as a teaching assistant for MAE 171A, Introduction to Feedback and Control...',
+          description: "",
+          section: "News",},{id: "news-our-preprint-cpnav-on-calibrated-vision-language-navigation-is-out-the-pdf-is-available",
+          title: 'Our preprint CPNAV on calibrated vision-language navigation is out. The PDF is available....',
+          description: "",
+          section: "News",},{id: "news-started-a-summer-research-internship-at-fieldai",
+          title: 'Started a summer research internship at FieldAI.',
+          description: "",
+          section: "News",},{id: "news-finished-my-summer-internship-at-fieldai-back-to-ucla-for-the-fall",
+          title: 'Finished my summer internship at FieldAI. Back to UCLA for the fall.',
+          description: "",
+          section: "News",},{id: "news-a-new-paper-from-my-work-at-fieldai-will-be-released-soon-stay-tuned",
+          title: 'A new paper from my work at FieldAI will be released soon. Stay...',
+          description: "",
+          section: "News",},{id: "projects-ceramic-3d-printer",
+          title: 'Ceramic 3D printer',
+          description: "A low-cost, screwless printer for biopolymers and barium titanate ceramics",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ceramic_3d_printer/";
+            },},{id: "projects-cpnav",
+          title: 'CPNAV',
+          description: "Calibrated vision-language navigation for finding objects in places a robot has never seen",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/cpnav/";
+            },},{id: "projects-why-new-professors-feel-unprepared-to-teach",
+          title: 'Why new professors feel unprepared to teach',
+          description: "A qualitative study of teaching preparedness in mechanical engineering",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/engineering_education/";
+            },},{id: "projects-f1tenth-autonomous-racing",
+          title: 'F1TENTH autonomous racing',
+          description: "Fast driving and obstacle avoidance on a 1/10 scale race car with ROS 2",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/f1tenth/";
+            },},{id: "projects-golf-ball-launcher",
+          title: 'Golf ball launcher',
+          description: "A semi-autonomous launcher that hits a chosen distance",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/golf_ball_launcher/";
+            },},{id: "projects-intelligent-ground-vehicle",
+          title: 'Intelligent ground vehicle',
+          description: "An unmanned vehicle that avoids obstacles and corrects its own heading",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/igv/";
+            },},{id: "projects-medical-injection-robot",
+          title: 'Medical injection robot',
+          description: "A robot arm that gives skin injections safely with impedance control",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/medical_injection_robot/";
+            },},{id: "projects-autonomous-rescue-boat",
+          title: 'Autonomous rescue boat',
+          description: "A boat that finds heat and sound sources on its own",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rescue_boat/";
+            },},{id: "projects-time-optimal-trajectory-planning-for-a-robot-arm",
+          title: 'Time-optimal trajectory planning for a robot arm',
+          description: "Solving a constrained time-optimal control problem fast enough to run in real time",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/robot_control_optimization/";
+            },},{id: "projects-stair-cleaning-robot",
+          title: 'Stair-cleaning robot',
+          description: "An autonomous robot that climbs and cleans stairs",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/stair_cleaning_robot/";
+            },},{id: "projects-tilt-rotor-vtol-control",
+          title: 'Tilt-rotor VTOL control',
+          description: "One model predictive controller for hover, cruise, and everything in between",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/vtol/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%71%69%7A%68%61%6F%63@%75%63%6C%61.%65%64%75", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=lIrvSaUAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/thecqzz", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/qizhao-chen-8647b624b", "_blank");
+        },
+      },{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/Qizhao_Chen_CV.pdf", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

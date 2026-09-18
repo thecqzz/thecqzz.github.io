@@ -1,0 +1,215 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Medical injection robot | Qizhao Chen </title> <meta name="author" content="Qizhao Chen"> <meta name="description" content="A robot arm that gives skin injections safely with impedance control"> <meta name="keywords" content="Qizhao Chen, robotics, conformal prediction, vision-language models, robot navigation, UCLA, mechanical engineering"> <meta property="og:site_name" content="Qizhao Chen"> <meta property="og:type" content="website"> <meta property="og:title" content="Qizhao Chen | Medical injection robot"> <meta property="og:url" content="https://thecqzz.github.io/projects/medical_injection_robot/"> <meta property="og:description" content="A robot arm that gives skin injections safely with impedance control"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Medical injection robot"> <meta name="twitter:description" content="A robot arm that gives skin injections safely with impedance control"> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Qizhao Chen"
+        },
+        "url": "https://thecqzz.github.io/projects/medical_injection_robot/",
+        "@type": "WebSite",
+        "description": "A robot arm that gives skin injections safely with impedance control",
+        "headline": "Medical injection robot",
+        
+        "sameAs": ["https://scholar.google.com/citations?user=lIrvSaUAAAAJ","https://github.com/thecqzz","https://www.linkedin.com/in/qizhao-chen-8647b624b",null],
+        
+        "name": "Qizhao Chen",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://thecqzz.github.io/projects/medical_injection_robot/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Qizhao</span> Chen </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">robotics research </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">other projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Medical injection robot</h1> <p class="post-description">A robot arm that gives skin injections safely with impedance control</p> </header> <article> <p><strong>Main contributor</strong>, University of California, Los Angeles · April to June 2025 · Advisor: Prof. Veronica Santos</p> <p>Giving an injection needs the right depth and the right force, and skin stiffness varies from person to person. I designed a robot arm system for precise and safe skin injection, with a focus on mechanical safety and a user-centered design.</p> <ul> <li>Built a centralized impedance controller that regulates the contact force during the injection.</li> <li>Verified the injection process in a custom MATLAB simulation across a range of skin stiffness values and penetration depths.</li> </ul> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Qizhao Chen. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: September 18, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "publications",
+          description: "Papers I have written or contributed to, newest first.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-robotics-research",
+          title: "robotics research",
+          description: "Research projects in safe robot navigation and control.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/research/";
+          },
+        },{id: "nav-other-projects",
+          title: "other projects",
+          description: "Course, competition, internship, and side projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Opens the CV PDF.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "news-our-paper-on-a-unified-mpc-strategy-for-a-tilt-rotor-vtol-aircraft-was-published-at-the-aiaa-scitech-2024-forum",
+          title: 'Our paper on a unified MPC strategy for a tilt-rotor VTOL aircraft was...',
+          description: "",
+          section: "News",},{id: "news-graduated-from-carnegie-mellon-university-with-an-m-s-in-mechanical-engineering",
+          title: 'Graduated from Carnegie Mellon University with an M.S. in Mechanical Engineering.',
+          description: "",
+          section: "News",},{id: "news-started-my-ph-d-in-mechanical-engineering-at-ucla-and-joined-the-practice-lab-led-by-prof-anushri-dixit",
+          title: 'Started my Ph.D. in Mechanical Engineering at UCLA and joined the PRACTICE Lab...',
+          description: "",
+          section: "News",},{id: "news-passed-the-ph-d-preliminary-exam",
+          title: 'Passed the Ph.D. preliminary exam.',
+          description: "",
+          section: "News",},{id: "news-started-as-a-teaching-assistant-for-mae-171a-introduction-to-feedback-and-control-systems-at-ucla",
+          title: 'Started as a teaching assistant for MAE 171A, Introduction to Feedback and Control...',
+          description: "",
+          section: "News",},{id: "news-our-preprint-cpnav-on-calibrated-vision-language-navigation-is-out-the-pdf-is-available",
+          title: 'Our preprint CPNAV on calibrated vision-language navigation is out. The PDF is available....',
+          description: "",
+          section: "News",},{id: "news-started-a-summer-research-internship-at-fieldai",
+          title: 'Started a summer research internship at FieldAI.',
+          description: "",
+          section: "News",},{id: "news-finished-my-summer-internship-at-fieldai-back-to-ucla-for-the-fall",
+          title: 'Finished my summer internship at FieldAI. Back to UCLA for the fall.',
+          description: "",
+          section: "News",},{id: "news-a-new-paper-from-my-work-at-fieldai-will-be-released-soon-stay-tuned",
+          title: 'A new paper from my work at FieldAI will be released soon. Stay...',
+          description: "",
+          section: "News",},{id: "projects-ceramic-3d-printer",
+          title: 'Ceramic 3D printer',
+          description: "A low-cost, screwless printer for biopolymers and barium titanate ceramics",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ceramic_3d_printer/";
+            },},{id: "projects-cpnav",
+          title: 'CPNAV',
+          description: "Calibrated vision-language navigation for finding objects in places a robot has never seen",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/cpnav/";
+            },},{id: "projects-why-new-professors-feel-unprepared-to-teach",
+          title: 'Why new professors feel unprepared to teach',
+          description: "A qualitative study of teaching preparedness in mechanical engineering",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/engineering_education/";
+            },},{id: "projects-f1tenth-autonomous-racing",
+          title: 'F1TENTH autonomous racing',
+          description: "Fast driving and obstacle avoidance on a 1/10 scale race car with ROS 2",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/f1tenth/";
+            },},{id: "projects-golf-ball-launcher",
+          title: 'Golf ball launcher',
+          description: "A semi-autonomous launcher that hits a chosen distance",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/golf_ball_launcher/";
+            },},{id: "projects-intelligent-ground-vehicle",
+          title: 'Intelligent ground vehicle',
+          description: "An unmanned vehicle that avoids obstacles and corrects its own heading",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/igv/";
+            },},{id: "projects-medical-injection-robot",
+          title: 'Medical injection robot',
+          description: "A robot arm that gives skin injections safely with impedance control",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/medical_injection_robot/";
+            },},{id: "projects-autonomous-rescue-boat",
+          title: 'Autonomous rescue boat',
+          description: "A boat that finds heat and sound sources on its own",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rescue_boat/";
+            },},{id: "projects-time-optimal-trajectory-planning-for-a-robot-arm",
+          title: 'Time-optimal trajectory planning for a robot arm',
+          description: "Solving a constrained time-optimal control problem fast enough to run in real time",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/robot_control_optimization/";
+            },},{id: "projects-stair-cleaning-robot",
+          title: 'Stair-cleaning robot',
+          description: "An autonomous robot that climbs and cleans stairs",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/stair_cleaning_robot/";
+            },},{id: "projects-tilt-rotor-vtol-control",
+          title: 'Tilt-rotor VTOL control',
+          description: "One model predictive controller for hover, cruise, and everything in between",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/vtol/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%71%69%7A%68%61%6F%63@%75%63%6C%61.%65%64%75", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=lIrvSaUAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/thecqzz", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/qizhao-chen-8647b624b", "_blank");
+        },
+      },{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/Qizhao_Chen_CV.pdf", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

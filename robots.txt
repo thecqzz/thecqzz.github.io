@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://thecqzz.github.io/sitemap.xml
